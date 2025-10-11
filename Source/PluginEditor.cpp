@@ -16,10 +16,14 @@ Squwbs4AudioProcessorEditor::Squwbs4AudioProcessorEditor (Squwbs4AudioProcessor&
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
     // Configure and add the gain slider
-        gainSlider.setSliderStyle (juce::Slider::LinearVertical);
-        gainSlider.setTextBoxStyle (juce::Slider::TextBoxBelow, true, 50, 20);
-        gainSlider.setRange(0.0,100.0,1.0);
-        gainSlider.setValue(50.0);
+        //gainSlider.setSliderStyle (juce::Slider::LinearVertical);
+        //gainSlider.setTextBoxStyle (juce::Slider::TextBoxBelow, true, 50, 20);
+        gainSlider.setTextBoxStyle (juce::Slider::NoTextBox, true, 50, 20);
+        gainSlider.setLookAndFeel(&myCustomLookAndFeel);
+        gainSlider.setSliderStyle(juce::Slider::RotaryHorizontalVerticalDrag);
+    
+        //gainSlider.setRange(0.0f,100.0f,1.0f);
+        //gainSlider.setValue(50.0f);
         addAndMakeVisible (gainSlider);
 
         // Configure and add the gain label
@@ -30,11 +34,12 @@ Squwbs4AudioProcessorEditor::Squwbs4AudioProcessorEditor (Squwbs4AudioProcessor&
         // Create the slider attachment
         gainAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment> (
         audioProcessor.parameters, "GAIN_ID", gainSlider);
-        setSize (200, 200);
+        setSize (100, 100);
 }
 
 Squwbs4AudioProcessorEditor::~Squwbs4AudioProcessorEditor()
 {
+    gainSlider.setLookAndFeel(nullptr);
 }
 
 //==============================================================================

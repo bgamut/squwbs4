@@ -151,7 +151,7 @@ void Squwbs4AudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
         for (int j = 0; j<main.getNumSamples(); ++j)
         {
             
-            mixFloat = gainParameter->load();
+            mixFloat = gainParameter->load()/100.0;
             //std::cout<<mixFloat<<std::endl;
             
             if (mixFloat<=0.5){
@@ -253,8 +253,8 @@ juce::AudioProcessorValueTreeState::ParameterLayout Squwbs4AudioProcessor::creat
         std::make_unique<juce::AudioParameterFloat>(
             juce::ParameterID("GAIN_ID", 1),    // Parameter ID and version
             "DRY/WET",                             // Display name
-            juce::NormalisableRange<float>(0.0f, 1.0f), // Range
-            0.5f                                // Default value
+            juce::NormalisableRange<float>(0.0f, 100.0f,0.01f),// Range
+            50.f                                // Default value
         )
     };
 }

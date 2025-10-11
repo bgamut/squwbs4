@@ -4,7 +4,11 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" pluginManufacturer="squwbs"
               aaxIdentifier="com.squwbs.squwbs4" pluginAAXCategory="8192">
   <MAINGROUP id="nxGT50" name="squwbs4">
+    <GROUP id="{F6ECBD67-0E5A-B60F-49A8-BA7568AE3638}" name="resources">
+      <FILE id="Oc3Ghz" name="knob.png" compile="0" resource="1" file="Source/resources/knob.png"/>
+    </GROUP>
     <GROUP id="{5F4CBACC-4335-284C-CCF6-CC2176757CA0}" name="Source">
+      <FILE id="QHfupE" name="customKnob.h" compile="0" resource="0" file="Source/customKnob.h"/>
       <FILE id="C8tsX9" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="tVc3ZP" name="PluginProcessor.h" compile="0" resource="0"

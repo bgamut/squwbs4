@@ -10,11 +10,11 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
-
+#include "customKnob.h"
 //==============================================================================
 /**
 */
-class Squwbs4AudioProcessorEditor  : public juce::AudioProcessorEditor
+class Squwbs4AudioProcessorEditor  : public juce::AudioProcessorEditor,public juce::LookAndFeel_V4
 {
 public:
     Squwbs4AudioProcessorEditor (Squwbs4AudioProcessor&);
@@ -30,6 +30,7 @@ private:
     Squwbs4AudioProcessor& audioProcessor;
     
     juce::Slider gainSlider;
+    CustomRotaryKnobLookAndFeel myCustomLookAndFeel;
     juce::Label gainLabel;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> gainAttachment;
 
