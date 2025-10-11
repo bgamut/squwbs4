@@ -166,13 +166,13 @@ public:
     //setRatios(0.75, 0.75, 0.5, 0.5, 0.25, 0.25),
     setRatios(1.0, 1.0, 1.0, 1.0, 1.0, 1.0);
     setMidHP(20.0);
-    setSideHP(200.0);
+    setSideHP(125.0);
     setMidLMC(175.0);
-    setSideLMC(175.0);
+    setSideLMC(750.0);
     setMidMHC(2750.0);
     setSideMHC(2750.0);
-    setMidLP(2250.0);
-    setSideLP(6000.0);
+    setMidLP(10000.0);
+    setSideLP(6600.0);
     resetMatch();
     reset();
     setGoals(0.068,0.031,0.039,0.043,0.035,0.038,0.031,0.031,0.031,0.063,0.063,0.063);
